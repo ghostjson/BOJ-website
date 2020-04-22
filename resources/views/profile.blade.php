@@ -195,29 +195,32 @@
 
 <div class="everything">
     <div class="body_section" style="margin-top: 100px">
-        <form method="post" enctype="multipart/form-data" class="form-div">
+        <form method="post" enctype="multipart/form-data" action="/profile/update" class="form-div">
+
+            {{ csrf_field()  }}
+
             <div class="image_field">
-                <img src="https://api.adorable.io/avatars/240/8.png" class="image_frame">
+                <img src="https://api.adorable.io/avatars/240/{{auth()->user()->profile_image }}.png" class="image_frame">
                 <div class="change-image">Change</div>
 
-                <input id="pro_image" name="pro_image" type="hidden" value="100">
+                <input id="pro_image" name="pro_image" type="hidden" value="{{ auth()->user()->profile_image  }}">
             </div>
-            <?= isset($error) ? $error : ''; ?>
+            <?= isset($_GET['error']) ? $_GET['error'] : ''; ?>
             <div class="input-field">
                 <label>Name : </label>
-                <input type="text" name="name" id="name" required class="input_areas" value="{{ auth()->user()->username }}">
+                <input type="text" name="username" id="name" required class="input_areas" value="{{ auth()->user()->username }}">
             </div>
             <div class="input-field1">
                 <label>E-mail : </label>
-                <input type="email" name="username" id="username" pattern="^[a-zA-Z0-9_@.-]*$" required class="input_areas1" value="{{ auth()->user()->email }}">
+                <input type="email" name="email" id="email" pattern="^[a-zA-Z0-9_@.-]*$" required class="input_areas1" value="{{ auth()->user()->email }}">
             </div><br />
             <div class="input-field2">
                 <label>Password : </label>
-                <input type="password" name="password" id="password" class="input_areas2" placeholder="Password" value="{{auth()->user()->password}}">
+                <input type="password" name="password" id="password" class="input_areas2" placeholder="Password" value="">
             </div>
             <div class="input-field5">
                 <label>Confirm-Password : </label>
-                <input type="password" name="confirm-password" id="confirm-password" class="input_areas5" placeholder="Re-type Password">
+                <input type="password" name="confirm_password" id="confirm-password" class="input_areas5" placeholder="Re-type Password">
             </div>
             <div class="input-field3">
 {{--                <label>Phone Number : </label>--}}
@@ -243,9 +246,10 @@
         $('.change-image').click(function(){
             let random = Math.floor(Math.random() * 100);
 
-            console.log(random)
+            $('#pro_image').attr('value', random);
 
-            $('.pro_image').val(random);
+
+
 
             $('.image_frame').attr('src', `https://api.adorable.io/avatars/240/${random}.png`);
         });

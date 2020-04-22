@@ -25,7 +25,8 @@ Route::get('/', 'MainController@home');
 
 Route::get('/processing', 'MainController@processing');
 
-Route::get('/profile', 'MainController@profile');
+Route::get('/profile', 'MainController@profile')->name('profile');
+Route::post('/profile/update', 'MainController@profileUpdate');
 
 Route::get('/videos', 'MainController@videos');
 

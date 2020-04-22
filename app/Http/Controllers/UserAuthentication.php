@@ -22,9 +22,12 @@ class UserAuthentication extends Controller
         $user->email = $request->input('email');
         $user->secret = $request->input('secret');
         $user->wallet = 0;
+        $user->profile_image = 0;
         $user->save();
 
         Auth::login($user);
+
+        return redirect('/');
     }
 
     public function loginView(){

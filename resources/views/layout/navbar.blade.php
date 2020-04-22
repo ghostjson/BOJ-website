@@ -71,7 +71,7 @@
         <a class="menu-links" href="/">Home</a>
         <a class="menu-links" href="/contact">Contact</a>
         <div  class="menu-links" id="menu-drop-down" style="width: 40px;height: 40px;background: lightgrey;margin-right: 10px;border-radius:100%;">
-            <img src="/assets/user.png" style="width:40px;
+            <img src="https://api.adorable.io/avatars/240/{{auth()->user()->profile_image }}.png" style="width:40px;
                     height:40px;border-radius:100%;">
 {{--            <div id="drop-menu">--}}
 {{--                <p style="display: block;width: 94%;height: 40px;margin-top: 0;text-align:center;margin-left: 3%;background:white;margin-top: 5px;color: #262626;" > {{ auth()->user()->username }} </p>--}}
@@ -81,7 +81,7 @@
 {{--            </div>--}}
 
             <div id="drop-menu">
-                <div>Jack</div>
+                <div>{{ auth()->user()->username  }}</div>
                 <div><a href="/profile">Profile</a></div>
                 <div><a href="/account">Account</a></div>
                 <div><a href="/logout">Logout</a></div>

@@ -135,36 +135,36 @@
         <div class="process-track">
             <p style="display: block;width: 100%;height: 30px;background: whitesmoke;border: 1px solid lightgrey;color: grey;text-align: center;margin-top: -0.5px;font-size: 20px;">Track Your Withdrawal Process</p>
             <div class="orders">
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to paypal<button class="cancel-btn">Cancel</button></p>
-                    <p class="order-description">Withdraw Paypal - ID : WEDTG1541DGF65DGH4685G4V6T
-                    <p class="order-date">2020-4-15 12:45:02</p></p>
-                </div>
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to Amazon-Gift-Card<button class="cancel-btn">Cancel</button></p>
-                    <p class="order-description">Withdraw Amazon-Gift-Card - ID : WEDTG1541DGF65DGfhfgH4685G4V6T
-                    <p class="order-date">2020-4-14 12:45:02</p></p>
-                </div>
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to Bitcoin<span class="complete">Completed</span></p>
-                    <p class="order-description">Withdraw  Bitcoin - ID : fhfhfgWEDTG1541DGF65DGH4685G4V6T
-                    <p class="order-date">2020-4-13 12:45:02</p></p>
-                </div>
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to EasyPaisa<span class="complete">Completed</span></p>
-                    <p class="order-description">Withdraw  EasyPaisa - ID : WEDTG1541Ddfg5h+6f5+fghV6T
-                    <p class="order-date">2020-4-12 12:45:02</p></p>
-                </div>
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to HBL bank<span class="complete">Completed</span></p>
-                    <p class="order-description">Withdraw HBL bank - ID : WEDTG1541DGF65DGH46sdhg85G4V6T
-                    <p class="order-date">2020-4-11 12:45:02</p></p>
-                </div>
-                <div class="order-box">
-                    <p class="order-heading"> Withdrawing $5 dollar to Google-Gift-Card<span class="complete">Completed</span></p>
-                    <p class="order-description">Withdraw Google-Gift-card- ID : WEDTG1541DGF65DGH468gbfg5G4V6T
-                    <p class="order-date">2020-4-10 12:45:02</p></p>
-                </div>
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to paypal<button class="cancel-btn">Cancel</button></p>--}}
+{{--                    <p class="order-description">Withdraw Paypal - ID : WEDTG1541DGF65DGH4685G4V6T--}}
+{{--                    <p class="order-date">2020-4-15 12:45:02</p></p>--}}
+{{--                </div>--}}
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to Amazon-Gift-Card<button class="cancel-btn">Cancel</button></p>--}}
+{{--                    <p class="order-description">Withdraw Amazon-Gift-Card - ID : WEDTG1541DGF65DGfhfgH4685G4V6T--}}
+{{--                    <p class="order-date">2020-4-14 12:45:02</p></p>--}}
+{{--                </div>--}}
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to Bitcoin<span class="complete">Completed</span></p>--}}
+{{--                    <p class="order-description">Withdraw  Bitcoin - ID : fhfhfgWEDTG1541DGF65DGH4685G4V6T--}}
+{{--                    <p class="order-date">2020-4-13 12:45:02</p></p>--}}
+{{--                </div>--}}
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to EasyPaisa<span class="complete">Completed</span></p>--}}
+{{--                    <p class="order-description">Withdraw  EasyPaisa - ID : WEDTG1541Ddfg5h+6f5+fghV6T--}}
+{{--                    <p class="order-date">2020-4-12 12:45:02</p></p>--}}
+{{--                </div>--}}
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to HBL bank<span class="complete">Completed</span></p>--}}
+{{--                    <p class="order-description">Withdraw HBL bank - ID : WEDTG1541DGF65DGH46sdhg85G4V6T--}}
+{{--                    <p class="order-date">2020-4-11 12:45:02</p></p>--}}
+{{--                </div>--}}
+{{--                <div class="order-box">--}}
+{{--                    <p class="order-heading"> Withdrawing $5 dollar to Google-Gift-Card<span class="complete">Completed</span></p>--}}
+{{--                    <p class="order-description">Withdraw Google-Gift-card- ID : WEDTG1541DGF65DGH468gbfg5G4V6T--}}
+{{--                    <p class="order-date">2020-4-10 12:45:02</p></p>--}}
+{{--                </div>--}}
 
             </div>
         </div>

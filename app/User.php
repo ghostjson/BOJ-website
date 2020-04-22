@@ -12,6 +12,7 @@ use Illuminate\Notifications\Notifiable;
  * @property mixed email
  * @property mixed secret
  * @property int|mixed wallet
+ * @property int|mixed profile_image
  */
 class User extends Authenticatable
 {

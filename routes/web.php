@@ -33,6 +33,12 @@ Route::get('/videos', 'MainController@videos');
 Route::get('/withdraw', 'MainController@withdraw');
 
 
+
+
+Route::get('/videos/complete', 'MainController@videoComplete');
+Route::get('/website/complete', 'MainController@webComplete');
+
+
 //Authentication
 
 Route::get('/register', 'UserAuthentication@registerView');

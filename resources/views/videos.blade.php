@@ -101,7 +101,7 @@
             player.play()
             played = 1;
         }else{
-            fetch('/video/complete', {
+            fetch('/videos/complete', {
                 method: 'GET'
             });
             alert('You are awarded $1.50')

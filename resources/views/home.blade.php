@@ -199,6 +199,10 @@
 
 @include('layout.navbar')
 
+<div id="dialog" title="Contact form">
+    <p>appear now</p>
+</div>
+
 <div class="landing-page">
     <p style="font-family: Ubuntu, sans-serif;font-size: 0.8em;">BOJ is a free earning website that helps you earn in this Lockdown</p>
 {{--    <div class="contents">--}}
@@ -236,7 +240,7 @@
         </div>
         </a>
         <a>
-        <div class="card">
+        <div class="card" id="site">
             <h3>Site</h3>
             <p>Watch each video and get paid for each video<br> but yo have to finish the video for full award.</p>
         </div>
@@ -284,6 +288,50 @@
 </div>
 
 @include('layout.footer')
+
+<script>
+    let time = 0;
+    let inter;
+    let siteActive = false;
+
+
+    window.onblur = ()=>{
+
+        if(siteActive){
+            popup = true
+            inter = setInterval(function () {
+                time += 1;
+                console.log(time)
+            }, 1000)
+        }
+
+    }
+
+    window.onfocus = ()=>{
+
+        clearInterval(inter);
+
+        if(siteActive){
+            if(time > 10){
+               alert('You are awarded $2.00')
+               time = 0;
+               siteActive = false
+                fetch('/website/complete', {
+                    method: 'GET'
+                })
+            }
+        }
+    }
+
+
+    $('#site').click(function() {
+        siteActive = true;
+
+        window.open('http://example.com/', '_blank');
+    });
+
+
+</script>
 
 </body>
 </html>

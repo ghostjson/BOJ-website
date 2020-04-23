@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUserWallet extends Migration
+class ChangeWalletDatatype extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddUserWallet extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->float('wallet');
+//            $table->float('wallet')->change();
         });
     }
 

@@ -60,4 +60,20 @@ class MainController extends Controller
     public function withdraw(){
         return view('withdraw');
     }
+
+    public function videoComplete(){
+        $user = auth()->user();
+        $user->wallet += 1.5;
+        $user->save();
+
+        return response()->json(['success'=>'success'], 200);
+    }
+
+    public function webComplete(){
+        $user = auth()->user();
+        $user->wallet += 2;
+        $user->save();
+
+        return response()->json(['success'=>'success'], 200);
+    }
 }

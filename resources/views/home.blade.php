@@ -200,7 +200,7 @@
 @include('layout.navbar')
 
 <div id="dialog" title="Contact form">
-    <p>appear now</p>
+    <!-- <p>appear now</p> -->
 </div>
 
 <div class="landing-page">

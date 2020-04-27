@@ -67,7 +67,7 @@
 
     <div class="logo"><a href="/    "><img src="/assets/logo2.png" style="width:100%;height:auto;margin-top: -30px;"></a></div>
     <div class="menu">
-        <a class="menu-links" href="/account">${{ money_format('%i',auth()->user()->wallet)  }}</a>
+        <a class="menu-links" href="/account">${{ auth()->user()->wallet  }}</a>
         <a class="menu-links" href="/">Home</a>
         <a class="menu-links" href="/contact">Contact</a>
         <div  class="menu-links" id="menu-drop-down" style="width: 40px;height: 40px;background: lightgrey;margin-right: 10px;border-radius:100%;">

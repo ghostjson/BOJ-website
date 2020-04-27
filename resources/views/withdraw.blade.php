@@ -221,7 +221,7 @@
     <div class="withdraw" id="withdraw">
         <p style="text-align: left;font-size: 40px;color: #262626;margin-top: -1px;">Withdraw</p>
         <div class="current-balance">
-            <p style="color: dodgerblue;font-size: 40px;line-height: 170px;">${{ money_format('%i',auth()->user()->wallet)  }}</p>
+            <p style="color: dodgerblue;font-size: 40px;line-height: 170px;">${{ auth()->user()->wallet  }}</p>
         </div>
         <p style="font-size: 25px;color: #262626;margin-left: 325px;">Your Current Balance</p>
         <div class="options">

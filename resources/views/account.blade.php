@@ -49,7 +49,7 @@
 
     <div class="balance">
         <p style="text-align: left;font-size: 40px;color: #262626;">Balance</p>
-        <div class="balance-box"><p style="color: dodgerblue;font-size: 40px;line-height: 170px;">${{ money_format('%i',auth()->user()->wallet)  }}</p></div>
+        <div class="balance-box"><p style="color: dodgerblue;font-size: 40px;line-height: 170px;">${{ auth()->user()->wallet  }}</p></div>
         <div style="font-size: 30px;color: #262626;margin-left: 290px;display: flex;font-family: sans-serif;"><p style="color: #dc0030;margin-right: 5px;">Your</p> <p style="color: #008ac9;margin-right: 5px;">Current </p> <p style="color: #c2b600;">Balance </p></div>
         <ul style="margin-top: 150px;font-size: 20px;">
             <li>It can take up to 24 hour with bad conditions for withdraw, but usually it takes lesser time than mentioned.</li>

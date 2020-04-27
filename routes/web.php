@@ -50,4 +50,20 @@ Route::get('/logout', 'UserAuthentication@logout');
 Route::get('/test/user', 'UserAuthentication@getUser');
 
 
+//admin pages
+
+Route::get('/admin', function(){
+   return view('admin.index');
+});
+
+Route::get('/admin/video', function(){
+    return view('admin.video');
+});
+
+Route::get('/admin/website', function(){
+    return view('admin.website');
+});
+
+
+
 

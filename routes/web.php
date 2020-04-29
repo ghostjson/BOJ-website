@@ -52,17 +52,18 @@ Route::get('/test/user', 'UserAuthentication@getUser');
 
 //admin pages
 
-Route::get('/admin', function(){
-   return view('admin.index');
-});
+Route::get('/admin', 'AdminController@index');
 
-Route::get('/admin/video', function(){
-    return view('admin.video');
-});
+Route::get('/admin/video', 'AdminController@video');
 
-Route::get('/admin/website', function(){
-    return view('admin.website');
-});
+Route::get('/admin/website', 'AdminController@website');
+
+Route::post('/admin/website/add', 'AdminController@addWebsite');
+
+Route::get('/admin/website/edit/{id}', 'AdminController@editUrlView');
+Route::post('/admin/website/edit/{id}', 'AdminController@editUrl');
+
+Route::get('/admin/website/delete/{id}', 'AdminController@deleteUrl');
 
 
 

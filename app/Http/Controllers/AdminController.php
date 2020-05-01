@@ -9,8 +9,16 @@ use Illuminate\Http\Request;
 use App\Url;
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
+
 class AdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('check.admin');
+    }
+
     public function index(){
         return view('admin.index');
     }

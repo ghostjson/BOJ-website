@@ -37,7 +37,7 @@ class UserAuthentication extends Controller
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
-            return redirect()->intended('/test/user');
+            return redirect('/');
         }else{
             return View::make('login', ['error'=> 'Username or password is incorrect']);
         }

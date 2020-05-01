@@ -10,7 +10,7 @@
             <li>Vestibulum auctor dapibus neque.</li>
         </ul>
     </section>
-    <section class="panel">
+    {{--<section class="panel">
         <h2>Posts</h2>
         <ul>
             <li><b>2458 </b>Published Posts</li>
@@ -104,7 +104,7 @@
                 <td>Jan 1, 2014</td>
             </tr>
         </table>
-    </section>
+    </section>--}}
 
 
 @endsection

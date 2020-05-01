@@ -97,6 +97,17 @@ class MainController extends Controller
 
         return response()->json(['success'=>'success'], 200);
     }
+
+    public function app(){
+        $track = auth()->user()->app_track;
+        $adv = DB::table('ads')->where('type','banner')->first();
+
+        if($app = DB::table('apps')->where('id', '>', $track)->first()){
+            return view('app', ['path'=>$app->url, 'id'=>$app->id, 'ad_path'=>$adv->path]);
+        }else{
+            return view('app', ['path'=>'', 'id'=>'','ad_path'=>$adv->path]);
+        }
+    }
 }
 
 

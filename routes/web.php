@@ -21,11 +21,14 @@ Route::post('/profile/update', 'MainController@profileUpdate');
 
 Route::get('/videos', 'MainController@videos');
 Route::get('/website', 'MainController@website');
+Route::get('/app', 'MainController@app');
 
 Route::get('/withdraw', 'MainController@withdraw');
 
 Route::get('/videos/complete/{id}', 'MainController@videoComplete');
 Route::get('/website/complete/{id}', 'MainController@webComplete');
+
+
 
 
 //Authentication

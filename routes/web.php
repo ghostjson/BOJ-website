@@ -23,7 +23,7 @@ Route::get('/videos', 'MainController@videos');
 
 Route::get('/withdraw', 'MainController@withdraw');
 
-Route::get('/videos/complete', 'MainController@videoComplete');
+Route::get('/videos/complete/{id}', 'MainController@videoComplete');
 Route::get('/website/complete', 'MainController@webComplete');
 
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class MainController extends Controller
@@ -54,15 +56,22 @@ class MainController extends Controller
     }
 
     public function videos(){
-        return view('videos');
+        $track = auth()->user()->video_track;
+        $adv = DB::table('ads')->where('type','video')->first();
+        if($video = DB::table('videos')->where('id', '>', $track)->first()){
+            return view('videos', ['path'=>$video->path, 'id'=>$video->id, 'ad_path'=>$adv->path]);
+        }else{
+            return view('videos', ['path'=>'', 'id'=>'']);
+        }
     }
 
     public function withdraw(){
         return view('withdraw');
     }
 
-    public function videoComplete(){
+    public function videoComplete($id){
         $user = auth()->user();
+        $user->video_track = $id;
         $user->wallet += 1.5;
         $user->save();
 

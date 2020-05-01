@@ -46,10 +46,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.css">
 <body>
 @include('layout.navbar')
-<h3>Watach Today's videos</h3>
 
+<h3 id="mes-toma" style="display: none">Come Back Tomarrow</h3>
 
-<section class="video">
+<section class="video" id="video-player-section">
+    <h3>Watach Today's videos</h3>
     <div class="video-platform">
         <video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered">
             <source src="ad.mp4">
@@ -57,9 +58,9 @@
 
     </div>
 
-    <div class="next">
+    {{--<div class="next">
         <a href="#">Next Video</a>
-    </div>
+    </div>--}}
 </section>
 
 
@@ -69,9 +70,15 @@
 
 
 <script>
+    if('{{ $path }}' === '' && '{{$id}}' === ''){
+        document.getElementById('video-player-section').style.display = 'none';
+        document.getElementById('mes-toma').style.display = '';
+
+    }
+
     let videos_src = {
-        ad: '/assets/videos/ad.mp4',
-        src: '/assets/videos/main.mp4'
+        ad: '{{ $ad_path }}',
+        src: '{{ $path }}'
     };
 
     let played = 0;
@@ -101,10 +108,14 @@
             player.play()
             played = 1;
         }else{
-            fetch('/videos/complete', {
+            fetch('/videos/complete/{{$id}}', {
                 method: 'GET'
-            });
-            alert('You are awarded $1.50')
+            })
+
+            .then(function(){
+                location.reload()
+            })
+
         }
 
 

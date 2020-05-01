@@ -53,5 +53,5 @@ Route::post('/admin/website/edit/{id}', 'AdminController@editUrl');
 Route::get('/admin/website/delete/{id}', 'AdminController@deleteUrl');
 
 Route::get('/admin/ads', 'AdminController@adsView');
-Route::get('/admin/ads/video/update', 'AdminController@updateVideoAd');
-Route::get('/admin/ads/banner/update', 'AdminController@updateBannerAd');
+Route::post('/admin/ads/video/update', 'AdminController@updateVideoAd');
+Route::post('/admin/ads/banner/update', 'AdminController@updateBannerAd');

@@ -30,7 +30,7 @@
             {{ csrf_field() }}
 
             <div class="twothirds">
-                <label for="name">Upload Video</label>
+                <label for="name">Upload Banner Image (728x90) </label>
                 <input type="file" accept="image/*" name="image" id="image"/><br>
                 <div>
                     <input type="submit" value="Update Banner Ad" />

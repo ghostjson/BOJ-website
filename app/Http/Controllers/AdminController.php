@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ads;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -83,11 +84,23 @@ class AdminController extends Controller
         return view('admin.ads');
     }
 
-    public function updateVideoAd(){
-        //todo
+    public function updateVideoAd(Request $request){
+        $video = Ads::find(2);
+        $path = $request->file('video')->store('public/videos');
+        $url = Storage::url($path);
+        $video->path = $url;
+        $video->save();
+
+        return redirect('/admin/ads');
     }
 
-    public function updateBannerAd(){
-        //todo
+    public function updateBannerAd(Request $request){
+        $video = Ads::find(3);
+        $path = $request->file('image')->store('public/images');
+        $url = Storage::url($path);
+        $video->path = $url;
+        $video->save();
+
+        return redirect('/admin/ads');
     }
 }

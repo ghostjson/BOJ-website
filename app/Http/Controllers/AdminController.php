@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Video;
 use Illuminate\Http\Request;
 
 use App\Url;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -17,10 +19,7 @@ class AdminController extends Controller
     }
 
     public function website(){
-
         $urls = Url::all();
-
-
         return view('admin.website', ['url'=>$urls]);
     }
 
@@ -53,9 +52,30 @@ class AdminController extends Controller
 
     public function deleteUrl(Request $request, $id){
         $url = Url::find($id);
-
         $url->delete();
-
         return redirect('/admin/website');
+    }
+
+
+    public function addVideo(Request $request){
+        $path = $request->file('video')->store('public/videos');
+        $url = Storage::url($path);
+        $urlModal = new Video;
+        $urlModal->path = $url;
+        $urlModal->reward = $request->input('reward');
+        $urlModal->save();
+        return redirect('/admin/video');
+    }
+
+    public function editVideoView($id){
+        //todo
+    }
+
+    public function editVideo(Request $request,$id){
+        //todo
+    }
+
+    public function deleteVideo(Request $request, $id){
+        //todo
     }
 }

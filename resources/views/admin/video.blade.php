@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="panel important">
-        <form action="/admin/video/add" method="post">
+        <form action="/admin/video/add" method="post"  enctype="multipart/form-data" >
 
             {{ csrf_field() }}
 

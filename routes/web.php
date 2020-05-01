@@ -43,14 +43,15 @@ Route::get('/test/user', 'UserAuthentication@getUser');
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/video', 'AdminController@video');
+Route::post('/admin/video/add', 'AdminController@addVideo');
+Route::get('/admin/video/edit/{id}', 'AdminController@editVideoView');
+Route::post('/admin/video/edit/{id}', 'AdminController@editVideo');
+Route::get('/admin/video/delete/{id}', 'AdminController@deleteVideo');
 
 Route::get('/admin/website', 'AdminController@website');
-
 Route::post('/admin/website/add', 'AdminController@addWebsite');
-
 Route::get('/admin/website/edit/{id}', 'AdminController@editUrlView');
 Route::post('/admin/website/edit/{id}', 'AdminController@editUrl');
-
 Route::get('/admin/website/delete/{id}', 'AdminController@deleteUrl');
 
 

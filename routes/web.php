@@ -44,8 +44,6 @@ Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/video', 'AdminController@video');
 Route::post('/admin/video/add', 'AdminController@addVideo');
-Route::get('/admin/video/edit/{id}', 'AdminController@editVideoView');
-Route::post('/admin/video/edit/{id}', 'AdminController@editVideo');
 Route::get('/admin/video/delete/{id}', 'AdminController@deleteVideo');
 
 Route::get('/admin/website', 'AdminController@website');

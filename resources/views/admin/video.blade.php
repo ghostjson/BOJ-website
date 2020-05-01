@@ -28,25 +28,25 @@
                 <th>S.N</th>
                 <th>Video Url</th>
                 <th>Reward</th>
-                <th>Edit/Remove</th>
+                <th>Remove</th>
             </tr>
             </thead>
             <tbody>
             {{-- $url[0]->urls  --}}
 
             <?php $i=1; ?>
-            {{--@foreach($url as $u)
+            @foreach($videos as $v)
 
                 <tr>
                     <td>{{ $i }}</td>
-                    <td>{{ $u->urls }}</td>
-                    <td>{{ $u->reward }}</td>
-                    <td> <a href="/admin/website/edit/{{ $u->id }}">edit</a> / <a href="/admin/website/delete/{{ $u->id }}">delete</a></td>
+                    <td>{{ $v->path }}</td>
+                    <td>{{ $v->reward }}</td>
+                    <td><a href="/admin/video/delete/{{ $v->id }}">Remove</a></td>
                 </tr>
 
                 <?php $i++; ?>
 
-            @endforeach--}}
+            @endforeach
 
             </tbody>
             <tfoot>

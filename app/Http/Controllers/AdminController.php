@@ -15,7 +15,8 @@ class AdminController extends Controller
     }
 
     public function video(){
-        return view('admin.video');
+        $videos = Video::all();
+        return view('admin.video', ['videos'=>$videos]);
     }
 
     public function website(){
@@ -67,15 +68,14 @@ class AdminController extends Controller
         return redirect('/admin/video');
     }
 
-    public function editVideoView($id){
-        //todo
-    }
-
-    public function editVideo(Request $request,$id){
-        //todo
-    }
 
     public function deleteVideo(Request $request, $id){
-        //todo
+        $video = Video::find($id);
+        $path = $video->path;
+        $video->delete();
+
+        Storage::delete($path);
+
+        return redirect('/admin/video');
     }
 }

@@ -78,4 +78,16 @@ class AdminController extends Controller
 
         return redirect('/admin/video');
     }
+
+    public function adsView(){
+        return view('admin.ads');
+    }
+
+    public function updateVideoAd(){
+        //todo
+    }
+
+    public function updateBannerAd(){
+        //todo
+    }
 }

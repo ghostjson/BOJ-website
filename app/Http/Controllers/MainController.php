@@ -65,6 +65,17 @@ class MainController extends Controller
         }
     }
 
+    public function website(){
+        $track = auth()->user()->website_track;
+        $adv = DB::table('ads')->where('type','banner')->first();
+
+        if($url = DB::table('urls')->where('id', '>', $track)->first()){
+            return view('website', ['path'=>$url->urls, 'id'=>$url->id, 'ad_path'=>$adv->path]);
+        }else{
+            return view('website', ['path'=>'', 'id'=>'','ad_path'=>$adv->path]);
+        }
+    }
+
     public function withdraw(){
         return view('withdraw');
     }
@@ -78,11 +89,14 @@ class MainController extends Controller
         return response()->json(['success'=>'success'], 200);
     }
 
-    public function webComplete(){
+    public function webComplete($id){
         $user = auth()->user();
+        $user->website_track = $id;
         $user->wallet += 2;
         $user->save();
 
         return response()->json(['success'=>'success'], 200);
     }
 }
+
+

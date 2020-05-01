@@ -239,7 +239,7 @@
             <p>Watch each video and get paid for each video<br> but yo have to finish the video for full award.</p>
         </div>
         </a>
-        <a>
+        <a href="/website">
         <div class="card" id="site">
             <h3>Site</h3>
             <p>Watch each video and get paid for each video<br> but yo have to finish the video for full award.</p>
@@ -289,49 +289,7 @@
 
 @include('layout.footer')
 
-<script>
-    let time = 0;
-    let inter;
-    let siteActive = false;
 
-
-    window.onblur = ()=>{
-
-        if(siteActive){
-            popup = true
-            inter = setInterval(function () {
-                time += 1;
-                console.log(time)
-            }, 1000)
-        }
-
-    }
-
-    window.onfocus = ()=>{
-
-        clearInterval(inter);
-
-        if(siteActive){
-            if(time > 10){
-               alert('You are awarded $2.00')
-               time = 0;
-               siteActive = false
-                fetch('/website/complete', {
-                    method: 'GET'
-                })
-            }
-        }
-    }
-
-
-    $('#site').click(function() {
-        siteActive = true;
-
-        window.open('http://example.com/', '_blank');
-    });
-
-
-</script>
 
 </body>
 </html>

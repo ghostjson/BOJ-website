@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ads;
+use App\App;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -110,5 +111,43 @@ class AdminController extends Controller
         $video->save();
 
         return redirect('/admin/ads');
+    }
+
+    public function appView(){
+        $apps = App::all();
+        return view('admin.apps', ['apps'=>$apps]);
+    }
+
+    public function addApp(Request $request){
+        $url_value = $request->input('url');
+        $reward = $request->input('reward');
+
+        $app = new App;
+
+        $app->url = $url_value;
+        $app->reward = $reward;
+
+        $app->save();
+
+        return redirect('admin/app');
+    }
+
+    public function editAppView($id){
+        $url = App::find($id);
+        return view('admin.edit_app', ['app'=>$url, 'id'=>$id]);
+    }
+
+    public function editApp(Request $request, $id){
+        $app = App::find($id);
+        $app->url = $request->input('url');
+        $app->reward = $request->input('reward');
+        $app->save();
+        return redirect('/admin/app');
+    }
+
+    public function deleteApp(Request $request, $id){
+        $app = App::find($id);
+        $app->delete();
+        return redirect('/admin/app');
     }
 }

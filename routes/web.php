@@ -56,3 +56,9 @@ Route::get('/admin/website/delete/{id}', 'AdminController@deleteUrl');
 Route::get('/admin/ads', 'AdminController@adsView');
 Route::post('/admin/ads/video/update', 'AdminController@updateVideoAd');
 Route::post('/admin/ads/banner/update', 'AdminController@updateBannerAd');
+
+Route::get('/admin/app', 'AdminController@appView');
+Route::post('/admin/app/add', 'AdminController@addApp');
+Route::get('/admin/app/edit/{id}', 'AdminController@editAppView');
+Route::post('/admin/app/edit/{id}', 'AdminController@editApp');
+Route::get('/admin/app/delete/{id}', 'AdminController@deleteApp');

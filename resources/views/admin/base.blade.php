@@ -29,6 +29,7 @@
         <li class="dashboard"><a href="/admin">Dashboard</a></li>
         <li class="write"><a href="/admin/video">Add Videos</a></li>
         <li class="edit"><a href="/admin/website">Add Websites</a></li>
+        <li class="website"><a href="/admin/app">Add App</a></li>
         <li class="image"><a href="/admin/ads">Update Ads</a></li>
     </ul>
 </nav>

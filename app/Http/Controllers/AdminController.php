@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Ads;
 use App\App;
 use App\Video;
+use App\Withdrawal;
 use Illuminate\Http\Request;
 
 use App\Url;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
@@ -150,5 +152,24 @@ class AdminController extends Controller
         $app = App::find($id);
         $app->delete();
         return redirect('/admin/app');
+    }
+
+    public function withdraw(){
+        $with = Withdrawal::all();
+        return view('/admin/withdraw', ['with'=>$with]);
+    }
+
+    public function withdrawDone($id){
+        $with = Withdrawal::find($id);
+        $with->status = 'complete';
+        $with->save();
+
+        return redirect('/admin/withdraws');
+    }
+
+    public function verifyReset(){
+        DB::table('users')->update(array('verify' => 'no'));
+
+        return redirect('/admin');
     }
 }

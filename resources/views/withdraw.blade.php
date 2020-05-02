@@ -252,6 +252,8 @@
 </div>
 
 
+
+
 <!-- Modal HTML embedded directly into document -->
 <div id="easy" class="modal">
     <img src="/assets/easypaisa.png" class="widtdrawal-title">
@@ -286,7 +288,7 @@
 
         <div class="container">
             @include('layout.navbar')
-
+            @if(auth()->user()->verify == 'yes')
             <div class="withdraw" id="withdraw">
                 <p style="text-align: left;font-size: 40px;color: #262626;margin-top: -1px;">Withdraw</p>
                 <div class="current-balance">
@@ -407,6 +409,13 @@
         </ul>
     </div>
 </div>
+@else
+    <div style="width: 100%;text-align: center;padding-top: 50px;">
+        <h1>You should verify the account before withdraw</h1>
+        <small> <a href="/verify">Go to verifivation</a> </small>
+    </div>
+@endif
+
 
 @include('layout.footer')
 

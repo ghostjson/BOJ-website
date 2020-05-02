@@ -257,7 +257,7 @@
             <p>Watch each video and get paid for each video<br> but yo have to finish the video for full award.</p>
         </div>
         </a>
-        <a>
+        <a href="/verify">
         <div class="card">
             <h3>Verify</h3>
             <p>Watch each video and get paid for each video<br> but yo have to finish the video for full award.</p>

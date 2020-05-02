@@ -31,6 +31,7 @@
         <li class="edit"><a href="/admin/website">Add Websites</a></li>
         <li class="website"><a href="/admin/app">Add App</a></li>
         <li class="image"><a href="/admin/ads">Update Ads</a></li>
+        <li class="form"><a href="/admin/withdraws">Withdraws</a></li>
     </ul>
 </nav>
 

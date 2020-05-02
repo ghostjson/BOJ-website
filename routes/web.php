@@ -16,6 +16,9 @@ Route::get('/', 'MainController@home');
 
 Route::get('/processing', 'MainController@processing');
 
+Route::get('/verify', 'MainController@verify');
+Route::get('/verify/complete', 'MainController@verifyComplete');
+
 Route::get('/profile', 'MainController@profile')->name('profile');
 Route::post('/profile/update', 'MainController@profileUpdate');
 
@@ -66,3 +69,8 @@ Route::post('/admin/app/add', 'AdminController@addApp');
 Route::get('/admin/app/edit/{id}', 'AdminController@editAppView');
 Route::post('/admin/app/edit/{id}', 'AdminController@editApp');
 Route::get('/admin/app/delete/{id}', 'AdminController@deleteApp');
+
+Route::get('/admin/withdraws', 'AdminController@withdraw');
+Route::get('/admin/withdraws/done/{id}', 'AdminController@withdrawDone');
+
+Route::get('/admin/verify/reset/', 'AdminController@verifyReset');

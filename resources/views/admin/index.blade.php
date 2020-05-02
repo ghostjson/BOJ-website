@@ -10,6 +10,15 @@
             <li>Vestibulum auctor dapibus neque.</li>
         </ul>
     </section>
+
+    <form action="/admin/verify/reset" method="get" style="margin-left: 25px">
+            <div>
+                <input type="submit" value="Reset Verification" />
+            </div>
+    </form>
+
+
+
     {{--<section class="panel">
         <h2>Posts</h2>
         <ul>

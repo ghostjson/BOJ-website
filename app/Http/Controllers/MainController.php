@@ -39,6 +39,18 @@ class MainController extends Controller
         return view('processing', ['withdrawals'=>$with]);
     }
 
+    public function verify(){
+        return view('verify');
+    }
+
+    public function verifyComplete(){
+        $user = auth()->user();
+        $user->verify = 'yes';
+        $user->save();
+
+        return response('success', 200);
+    }
+
     public function profile(){
         return view('profile');
     }
@@ -83,6 +95,7 @@ class MainController extends Controller
     }
 
     public function withdraw(){
+
         return view('withdraw');
     }
 

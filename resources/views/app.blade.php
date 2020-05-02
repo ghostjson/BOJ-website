@@ -64,7 +64,9 @@
         <a href="#" id="site">{{ $path }}</a>
     </div>
 </section>
-
+<div class="banner">
+    <img src="{{ $ad_path }}">
+</div>
 <script>
 
     if('{{$path}}' === ''){

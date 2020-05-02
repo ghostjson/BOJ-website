@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Video;
+use App\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,12 @@ class MainController extends Controller
     }
 
     public function processing(){
-        return view('processing');
+
+        $username = auth()->user()->username;
+
+        $with = Withdrawal::where('name', $username)->latest()->get();
+
+        return view('processing', ['withdrawals'=>$with]);
     }
 
     public function profile(){
@@ -78,6 +84,22 @@ class MainController extends Controller
 
     public function withdraw(){
         return view('withdraw');
+    }
+
+    public function withdrawSubmit(Request $request){
+
+        $with = new Withdrawal;
+        $with->name = $request->input('username');
+        $with->target = $request->input('target');
+        $with->amount = $request->input('amount');
+        $with->type = $request->input('type');
+
+        $user = \auth()->user();
+        $user->wallet -= $with->amount;
+        $user->save();
+        $with->save();
+
+        return redirect('/processing');
     }
 
     public function videoComplete($id){

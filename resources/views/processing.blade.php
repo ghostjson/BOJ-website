@@ -120,6 +120,20 @@
         font-size: 13px;
         text-align: center;
     }
+    .pending{
+        border: 1px solid #c1d622;
+        background: #d4d623;
+        color: #000000;
+        border-radius: 5px;
+        float: right;
+        width: 80px;
+        height: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
+        line-height: 20px;
+        font-size: 13px;
+        text-align: center;
+    }
     .bottom-menu{
         position: relative;
     }
@@ -135,11 +149,18 @@
         <div class="process-track">
             <p style="display: block;width: 100%;height: 30px;background: whitesmoke;border: 1px solid lightgrey;color: grey;text-align: center;margin-top: -0.5px;font-size: 20px;">Track Your Withdrawal Process</p>
             <div class="orders">
-{{--                <div class="order-box">--}}
-{{--                    <p class="order-heading"> Withdrawing $5 dollar to paypal<button class="cancel-btn">Cancel</button></p>--}}
-{{--                    <p class="order-description">Withdraw Paypal - ID : WEDTG1541DGF65DGH4685G4V6T--}}
-{{--                    <p class="order-date">2020-4-15 12:45:02</p></p>--}}
-{{--                </div>--}}
+
+
+                @foreach($withdrawals as $with)
+                    <div class="order-box">
+                        <p class="order-heading"> Withdrawing ${{$with->amount}} dollar to {{$with->type}}<span class="{{$with->status}}">{{$with->status}}</span></p></p>
+                        <p class="order-description">Withdraw Paypal - ID : {{$with->id}}
+                        <p class="order-date">{{$with->created_at}}</p></p>
+                    </div>
+                @endforeach
+
+
+
 {{--                <div class="order-box">--}}
 {{--                    <p class="order-heading"> Withdrawing $5 dollar to Amazon-Gift-Card<button class="cancel-btn">Cancel</button></p>--}}
 {{--                    <p class="order-description">Withdraw Amazon-Gift-Card - ID : WEDTG1541DGF65DGfhfgH4685G4V6T--}}

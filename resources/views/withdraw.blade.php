@@ -225,14 +225,19 @@
     <img src="/assets/paypal.png" class="widtdrawal-title">
     <p>Please fill all the information correctly or we're not responsibly for lost fund.</p>
 
-    <form>
+    <form method="post" action="/withdraw/submit">
+
+        @csrf
+
+        <input type="hidden" name="type" value="paypal">
+
         <div class="input-div-pp">
             <label>Name:</label><br>
             <input type="text" name="username" value="{{auth()->user()->username}}" class="input" required>
         </div>
         <div class="input-div-pp">
             <label>PayPal Address:</label><br>
-            <input type="text" name="paypal-address" placeholder="Paypal Address" class="input" required>
+            <input type="text" name="target" placeholder="Paypal Address" class="input" required>
         </div>
         <div class="input-div-pp">
             <label>Enter Amount:</label>
@@ -252,14 +257,19 @@
     <img src="/assets/easypaisa.png" class="widtdrawal-title">
     <p>Please fill all the information correctly or we're not responsibly for lost fund.</p>
 
-    <form>
+    <form method="post" action="/withdraw/submit">
+
+        @csrf
+
+        <input type="hidden" name="type" value="easypaisa">
+
         <div class="input-div-pp">
             <label>Name:</label><br>
             <input type="text" name="username" value="{{auth()->user()->username}}" class="input" required>
         </div>
         <div class="input-div-pp">
             <label>EasyPaisa Receiver Account Number:</label><br>
-            <input type="text" name="easypaisa-address" placeholder="0345917890" class="input" required>
+            <input type="text" name="target" placeholder="0345917890" class="input" required>
         </div>
         <div class="input-div-pp">
             <label>Enter Amount:</label>

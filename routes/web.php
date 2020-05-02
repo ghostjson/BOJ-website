@@ -24,6 +24,7 @@ Route::get('/website', 'MainController@website');
 Route::get('/app', 'MainController@app');
 
 Route::get('/withdraw', 'MainController@withdraw');
+Route::post('/withdraw/submit', 'MainController@withdrawSubmit');
 
 Route::get('/videos/complete/{id}', 'MainController@videoComplete');
 Route::get('/website/complete/{id}', 'MainController@webComplete');

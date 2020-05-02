@@ -44,6 +44,14 @@
         .links a{
             margin-top: 30px;
         }
+
+        .banner{
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            z-index: 99;
+        }
     </style>
 
     <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
@@ -64,6 +72,10 @@
        <a href="#" id="site">{{ $path }}</a>
     </div>
 </section>
+
+<div class="banner">
+    <img src="{{ $ad_path }}">
+</div>
 
 <script>
 

@@ -79,7 +79,7 @@ class MainController extends Controller
         if($video = DB::table('videos')->where('id', '>', $track)->first()){
             return view('videos', ['path'=>$video->path, 'id'=>$video->id, 'ad_path'=>$adv->path]);
         }else{
-            return view('videos', ['path'=>'', 'id'=>'']);
+            return view('videos', ['path'=>'', 'id'=>'','ad_path'=>'']);
         }
     }
 

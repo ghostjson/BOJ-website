@@ -56,7 +56,12 @@
             <source src="ad.mp4">
         </video>
 
+        <div class="banner" style="z-index:99; margin: 0px auto; position: relative; bottom: 50px;">
+            put add here
+        </div>
     </div>
+
+    
 
     {{--<div class="next">
         <a href="#">Next Video</a>
@@ -70,16 +75,23 @@
 
 
 <script>
-    if('{{ $path }}' === '' && '{{$id}}' === ''){
-        document.getElementById('video-player-section').style.display = 'none';
-        document.getElementById('mes-toma').style.display = '';
+    // if('{{ $path }}' === '' && '{{$id}}' === ''){
+    //     document.getElementById('video-player-section').style.display = 'none';
+    //     document.getElementById('mes-toma').style.display = '';
 
-    }
+    // }
+
+    // let videos_src = {
+    //     ad: '{{ $ad_path }}',
+    //     src: '{{ $path }}'
+    // };
+
+    let ad = true;
 
     let videos_src = {
-        ad: '{{ $ad_path }}',
-        src: '{{ $path }}'
-    };
+        ad: '/assets/videos/ad.mp4',
+        src: '/assets/videos/main.mp4'
+    }
 
     let played = 0;
 
@@ -97,6 +109,17 @@
             player.controls(false)
         }
     })
+
+
+    setInterval(function(){
+        if(ad){
+            $('.banner').fadeIn();
+        }else{
+            $('.banner').fadeOut();
+        }
+
+        ad = ad ? false : true;
+    }, 5000)
 
 
     player.on('ended', ()=> {

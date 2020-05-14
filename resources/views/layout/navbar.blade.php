@@ -95,7 +95,7 @@
 </style>
 <div class="container_nav">
     <div class="logo">
-        <a href="/"><img src="/assets/officiallogo.png"></a>
+        <a href="/"><img src="/assets/monaptor.png"></a>
     </div>
     <div class="menu">
     <a style="color:#feca57;" href="/account">Rs {{ auth()->user()->wallet  }}</a>

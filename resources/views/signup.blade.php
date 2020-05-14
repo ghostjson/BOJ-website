@@ -14,7 +14,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/urlbox.png" type="image/x-icon">
+	<link rel="icon" href="/assets/urlbox.png" type="image/x-icon">
+	@include('layout.ad-blocker-detect')
 </head>
 <style type="text/css">
 	body{

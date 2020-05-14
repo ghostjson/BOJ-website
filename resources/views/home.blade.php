@@ -13,6 +13,7 @@
 
     <title>Monaptor</title>
     <link rel="icon" href="/assets/urlbox.png" type="image/gif">
+    @include('layout.ad-blocker-detect')
 </head>
 <style>
     body{

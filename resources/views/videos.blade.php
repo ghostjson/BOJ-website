@@ -8,6 +8,7 @@
     <link rel="icon" href="/assets/urlbox.png" type="image/gif">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @include('layout.ad-blocker-detect')
     <style>
         body {
             padding: 0;

@@ -62,6 +62,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        @include('layout.ad-blocker-detect')
     </head>
     <body>
         <div class="flex-center position-ref full-height">

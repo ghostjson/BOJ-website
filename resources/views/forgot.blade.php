@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forget</title>
+    @include('layout.ad-blocker-detect')
 </head>
 <body>
     <form action="/forgot" method="post">

@@ -241,7 +241,7 @@
     </div>
 </div>
 </div>
-<script>
+
     function count_up(bio_cha) {
        document.getElementById('cha_num').innerHTML = bio_cha.value.length;
    }

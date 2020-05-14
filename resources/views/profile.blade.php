@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/1b5e0bcd4a.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @include('layout.ad-blocker-detect')
 </head>
 <style>
     body{

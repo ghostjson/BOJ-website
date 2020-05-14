@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Video;
+use App\Url;
 use App\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,6 @@ class MainController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-
     }
 
     public function account(){
@@ -126,9 +126,10 @@ class MainController extends Controller
     }
 
     public function webComplete($id){
+        $url = Url::find($id);
         $user = auth()->user();
         $user->website_track = $id;
-        $user->wallet += 2;
+        $user->wallet += $url->reward;
         $user->save();
 
         return response()->json(['success'=>'success'], 200);

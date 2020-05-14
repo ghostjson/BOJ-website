@@ -15,7 +15,7 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->username !== 'founder'){
+        if(auth()->user()->username !== 'admin'){
             return redirect('/');
         }
 

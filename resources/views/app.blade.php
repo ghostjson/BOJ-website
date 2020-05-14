@@ -48,7 +48,7 @@
             font-size: 1.3em;
             width: 100%;
             text-align: center;
-            padding:0;
+            padding-top: 150px;
         }
 
         .links a{
@@ -91,7 +91,6 @@
             height:auto;
             left:0;
             margin-top:200px;
-            position:absolute;
         }
         .links small{
             margin-top:10px;

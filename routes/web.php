@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/account', 'MainController@account');
 
 Route::get('/contact', 'MainController@contact');
-
+Route::get('/policy', function(){
+    return view('policy');
+});
 
 Route::get('/', 'MainController@home');
 

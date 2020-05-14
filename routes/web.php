@@ -43,6 +43,9 @@ Route::get('/login', 'UserAuthentication@loginView')->name('login');
 Route::post('/login', 'UserAuthentication@login');
 Route::get('/logout', 'UserAuthentication@logout');
 
+Route::get('/forgot', function(){return view('forgot');});
+Route::post('/forgot', 'UserAuthentication@forgot');
+
 Route::get('/test/user', 'UserAuthentication@getUser');
 
 

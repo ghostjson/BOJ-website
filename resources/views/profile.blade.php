@@ -9,19 +9,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <script src="https://kit.fontawesome.com/1b5e0bcd4a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
     body{
-        background: white;
+        background: #0f0f0f;
+        padding:0;
+        margin:0;
     }
     .everything {
         width: 50%;
         height: 100%;
-        background: white;
+        background: #0f0f0f;
         margin-left: 25%;
     }
     .form-div{
-        border: 1px solid lightgrey;
         padding-bottom: 30px;
         width: 100%;
         text-align: center;
@@ -165,28 +168,7 @@
         margin-left: 90%;
         margin-top: 70px;
     }
-    @media only screen and (max-width: 600px)
-    {
-        .everything{
-            width: 100%;
-            height: auto;
-            border: none;
-            margin-left: 0;
-        }
-        .image_frame{
-            width: 250px;
-            height: 250px;
-            border-radius: 100%;
-            margin-left:28%;
-            margin-top: 50px;
-        }
-        .change-image{
-            margin-left: 34%;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
 
-    }
 </style>
 <body>
 

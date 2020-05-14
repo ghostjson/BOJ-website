@@ -116,9 +116,10 @@ class MainController extends Controller
     }
 
     public function videoComplete($id){
+        $video = Video::find($id);
         $user = auth()->user();
         $user->video_track = $id;
-        $user->wallet += 1.5;
+        $user->wallet += $video->reward;
         $user->save();
 
         return response()->json(['success'=>'success'], 200);

@@ -1,0 +1,3 @@
+[08-May-2020 06:30:09 America/Chicago] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home1/uraam/source/artisan on line 33
+[08-May-2020 11:39:22 UTC] PHP Fatal error:  Declaration of Carbon\Translator::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home1/uraam/source/vendor/nesbot/carbon/src/Carbon/Translator.php on line 18
+[09-May-2020 13:11:19 America/Chicago] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home1/uraam/source/artisan on line 33

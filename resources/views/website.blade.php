@@ -2,10 +2,20 @@
 <html>
 
 <head>
-    <title>Website</title>
+    <title>Websites | Monaptor</title>
     <script src="https://kit.fontawesome.com/1b5e0bcd4a.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="icon" href="/assets/urlbox.png" type="image/gif">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+    body{
+        padding;0;
+        margin:0;
+        background:#0f0f0f;
+        color:lightgrey;
+    }
         h3 {
             width: 100%;
             text-align: center;
@@ -58,6 +68,55 @@
             margin: 100px auto;
             max-width: 700px;
         }
+        
+    .navbar{
+        position:fixed;
+        width:100%;
+        margin-top:60px;
+    }
+    .banner_ads{
+        width:300px;
+        height:50px;
+        margin:0;
+        padding:0;
+    }
+        @media only screen and (max-width:500px)
+        {
+            .navbar{
+            margin-top:60px;
+        }
+            #link-section{
+                width:100%;
+                height:90%;
+                padding:0;
+                margin:0;
+                padding-bottom:20px;
+                background:#0f0f0f;
+                z-index:-1;
+                margin-top:9%;
+                position:absolute;
+            }
+            .banner{
+                width:300px;
+                height:50px;
+                margin-left:100px;
+                position:absolute;
+                border:1px solid lightgrey;
+
+            }
+            .links{
+                width:90%;
+                height:auto;
+                margin:auto;
+                margin-top:110px;
+            }
+            .banner_ads{
+        width:300px;
+        height:50px;
+        margin:0;
+        padding:0;
+    }
+        }
     </style>
 
     <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
@@ -65,9 +124,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.css">
 
 <body>
-    @include('layout.navbar')
+    <div class="navbar">@include('layout.navbar')</div>
 
-    <h3 id="mes-toma" style="display: none">Come Back Tomarrow</h3>
+    <h3 id="mes-toma" style="display: none;margin-top:120px;position:absolute;">Come Back Tomarrow</h3>
 
     <section class="website-link-section" id="link-section">
 
@@ -79,12 +138,10 @@
         </div>
 
 
-    </section>
-
-
-    <div class="banner">
-        <img src="{{ $ad_path }}">
+        <div class="banner">
+        <img src="{{ $ad_path }}" class="banner_ads">
     </div>
+    </section>
 
     <script>
         if ('{{$path}}' === '') {
@@ -133,12 +190,6 @@
             window.open('{{$path}}', '_blank');
         });
     </script>
-
-
-
-    <div class="bottom-menu">
-
-        @include('layout.footer')</div>
 </body>
 
 </html>

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Videos</title>
+    <title>Videos | Monaptor</title>
     <script src="https://kit.fontawesome.com/1b5e0bcd4a.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="icon" href="/assets/urlbox.png" type="image/gif">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body{
+            padding:0;
+            margin:0;
+            background:#0f0f0f;
+            color:lightgrey;
+        }
 
         h3{
             width: 100%;
@@ -39,33 +48,87 @@
             border-radius: 10px;
             color: white;
         }
+        .navbar{
+            margin-top:40px;
+            position:fixed;
+        }.banner{
+            z-index:99; margin: 0px auto; position: relative; bottom: 50px;
+        }
+        .vid{
+            z-index:-1;
+        }
+        @media only screen and (max-width:500px){
+            .navbar{
+                position:fixed;
+                margin-top:60px;
+
+            }
+            .video{
+                width:100%;
+                margin:0;
+                padding:0;
+                height:450px;
+                padding-top:50px;
+                padding-bottom:50px;
+                background:#0f0f0f;
+                position:absolute;
+                z-index:-1;
+                margin-top:110px;
+            }
+            .title{
+                font-size:30px;
+                color:lightgrey;
+                margin-top:10px;
+                text-align:center;
+            }
+            .video-platform{
+                width:100%;
+                height:auto;
+            }
+            #video-player{
+                width:100%;
+                position:absolute;
+                left:0;
+            }
+            .banner{
+                z-index:100;
+                position:absolute;
+                color:white;
+                background:#141414;
+                height:60px;
+                width:450px;
+                margin-left:25px;
+                bottom:0;
+                margin-top:200px;
+            }
+            .vid{
+                z-index:-1;
+            }
+        }
     </style>
 
     <link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.css">
 <body>
-@include('layout.navbar')
+<div class="navbar">@include('layout.navbar')</div>
 
 <h3 id="mes-toma" style="display: none">Come Back Tomarrow</h3>
 
 <section class="video" id="video-player-section">
-    <h3>Watach Today's videos</h3>
+    <h3 class="title">Watch Today's videos</h3>
     <div class="video-platform">
-        <video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered">
-            <source src="ad.mp4">
+        <video id="video-player"  class="video-js vjs-default-skin vjs-big-play-centered">
+            <source src="ad.mp4" class="vid">
         </video>
-
-        <div class="banner" style="z-index:99; margin: 0px auto; position: relative; bottom: 50px;">
-            put add here
-        </div>
     </div>
-
-    
-
     {{--<div class="next">
         <a href="#">Next Video</a>
     </div>--}}
+
+    <div class="banner">
+            put add here
+        </div>
 </section>
 
 
@@ -144,11 +207,5 @@
 
     })
 </script>
-
-
-
-<div class="bottom-menu">
-
-    @include('layout.footer')</div>
 </body>
 </html>

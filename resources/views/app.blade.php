@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>App</title>
+    <title>Apps | Monaptor</title>
     <script src="https://kit.fontawesome.com/1b5e0bcd4a.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/urlbox.png" type="image/gif">
     <style>
+        body{
+            padding:0;
+            margin:0;
+            background:#0f0f0f;
+        }
 
         h3{
             width: 100%;
@@ -12,6 +20,7 @@
             font-family: Ubuntu, sans-serif;
             font-size: 2em;
             margin: 20px 0px;
+            color:#0abde3;
         }
         small{
             font-family: Ubuntu, sans-serif;
@@ -39,10 +48,75 @@
             font-size: 1.3em;
             width: 100%;
             text-align: center;
+            padding:0;
         }
 
         .links a{
             margin-top: 30px;
+            color:#0abde3;
+            padding:0;
+        }
+        .info{
+            font-size:40px;
+            color:#0abde3;
+            display:block;
+            margin-top:70px;
+            position:absolute;
+            z-index:-1;
+        }
+
+            .links small{
+                color:lightgray;
+                padding:0;
+        }
+        .navbar{
+        position:fixed;
+        width:100%;
+        margin-top:60px;
+    }
+        @media only screen and (max-width:500px)
+        {
+            .navbar{
+            margin-top:60px;
+        }
+        .info{
+            font-size:30px;
+            color:#0abde3;
+            display:block;
+            margin-top:130px;
+            position:absolute;
+        }
+        .links{
+            width:100%;
+            height:auto;
+            left:0;
+            margin-top:200px;
+            position:absolute;
+        }
+        .links small{
+            margin-top:10px;
+            position:absolute;
+            display:block;
+            width:100%;
+            text-align:center;
+        }
+        #site{
+            width:100%;
+            height:auto;
+            text-decoration:none;
+            text-align:center;
+        }
+        .banner{
+            width:300px;
+            height:50px;
+            position:absolute;
+            margin:auto;
+            margin-top:300px;
+        }
+        .banner img{
+            width:300px;
+            height:50px;
+        }
         }
     </style>
 
@@ -50,15 +124,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.css">
 <body>
-@include('layout.navbar')
-
+<div class="navbar">@include('layout.navbar')</div>
 <h3 id="mes-toma" style="display: none">Come Back Tomarrow</h3>
 
 <section class="website-link-section" id="link-section">
 
-    <h3>Visit these links to get reward</h3>
-
-
+    <h3 class="info">Visit these links to get reward</h3>
     <div class="links">
         <small>You should download the app to get reward</small>
         <a href="#" id="site">{{ $path }}</a>
@@ -117,11 +188,5 @@
 
 
 </script>
-
-
-
-<div class="bottom-menu">
-
-    @include('layout.footer')</div>
 </body>
 </html>

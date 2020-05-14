@@ -1,91 +1,248 @@
 <style>
-    .bottom-nav{
-        width: 100%;
-        height: 350px;
-        background:whitesmoke;
-        position: absolute;
-        margin-bottom:-900px;
-        bottom: 0;
-        display: flex;
+.info_container{
+    width: 100%;
+    min-height: 350px;
+    max-height: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #101010;
+    display: flex;
+    position: absolute;
+    margin-top:1200px;
+    border-top: 1px solid #262626;
+    z-index:-1;
+}
+/*----------For Sending Message----------*/
+
+.information{
+    width: 25%;
+    height: 350px;
+    padding-bottom: 20px;
+    background: #101010;
+    position: absolute;
+    margin-left: 2%;
+}
+.info-text{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    float: justify;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.social_profile{
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+}
+.social_link{
+    display: block;
+    width: 100%;
+    margin-left: 10%;
+    color:#0abde3;
+    text-decoration: none;
+}
+.info_title{
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+
+
+/*----------For Sending Message----------*/
+
+.emails{
+    width: 30%;
+    height:350px;
+    margin-left: 33%;
+    background-color: #101010;
+    padding-bottom: 20px;
+}
+.contact_title{
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+.email_contacts{
+    display: block;
+    font-size: 20px;
+    color: aliceblue;
+    text-align: center;
+}
+
+/*----------For Sending Message----------*/
+
+.message_sender{
+    width: 30%;
+    position: absolute;
+    height: auto;
+    padding-bottom: 20px;
+    background-color:#101010;
+    margin-left: 68%;
+}
+
+.message{
+    width: 90%;
+    height: 320px;
+    background-color: #101010;
+    margin-left: 5%;
+}
+
+.message-title{
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+.name_input{
+    width: 49%;
+    height: 30px;
+    font-size: 15px;
+    margin-left: 0;
+    border: none;
+    border-bottom: 1px solid #0abde3;
+    background: #101010;
+    color: white;
+}
+.email_input{
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #0abde3;
+    background: #101010;
+    color: white;
+}
+.message_input{
+    height: 70px;
+    width: 99%;
+    resize: none;
+    font-size: 15px;
+    margin-left: 0;
+    border: none;
+    border-bottom: 1px solid #0abde3;
+    background: #101010;
+    margin-top: 20px;
+    color: white;
+}
+.submit-btn{
+    width: 100%;
+    height: 40px;
+    background-color:#101010;
+    border: 2px solid #0abde3;
+    border-radius: 5px;
+    color: #0abde3;
+    font-size: 25px;
+    margin-top: 20px;
+}
+@media only screen and (max-width:500px)
+{
+    .info_container{
+        width:100%;
+        height:auto;
+        padding:0;
+        background:#0f0f0f;
+        border-top:1px solid lightgrey;
+        margin-top:1300px;
     }
-    .about{
-        width: 25%;
-        height: 200px;
-        background: whitesmoke;
-        color: black;
-        font-size: 18px;
-        font-family: sans-serif;
-        z-index: 1;
-        text-align: center;
+    .information{
+        width:100%;
+        margin-left:0;
+        padding:0;
+        height:auto;
+        margin-top:600px;
+        background:#0f0f0f;
+        text-align:justify;
     }
-    .contact{
-        width: 25%;
-        height: 200px;
-        background: whitesmoke;
-        color: black;
-        text-align: center;
-        top: 0;
-        font-size: 18px;
-        font-family: sans-serif;
-        margin-left: 12.5%;
+    .info-text{
+        float:justify;
+        font-size:18px;
+        color:lightgrey;
+    }
+    .emails{
+        width:100%;
+        margin-left:0;
+        margin-top:0;
+        padding:0;
+        height:auto;
+        background:#0f0f0f;
+    }
+    .message_sender{
+        width:100%;
+        margin-left:0;
+        margin-top:250px;
+        padding:0;
+        height:auto;
+        background:#0f0f0f;
     }
     .message{
-        width: 25%;
-        height: 200px;
-        background: whitesmoke;
-        color: black;
-        text-align: center;
-        top: 0;
-        font-size: 18px;
-        font-family: sans-serif;
-        margin-left: 10%;
+        width:94%;
+        height:auto;
+        padding:0;
+        margin-left:3%;
+        background:#0f0f0f;
+    }
+    .name_email{
+        background:#0f0f0f;
+        color:white;
+        width:40%;
+        margin-left:5%;
+    }
+    .message textarea{
+        background:#0f0f0f;
+        color:white;
+        width:85%;
+        margin-left:5%;
     }
     .submit-btn{
-        width: 98%;
-        height: 40px;
-        background: dodgerblue;
-        color: white;
-        font-size: 18px;
-        border-radius: 10px;
-        text-align: center;
-        border: none;
-        margin-top: 10px;
+        width:85%;
+        margin-left:5%;
     }
     .submit-btn:hover{
-        background: #3997F2;
+        background:#0abde3;
+        color:#0f0f0f;
     }
-    .submit-btn:focus{
-        background: #469DF1;
+    .character_count{
+        width:85%;
+        margin-left:5%;
+        text-align:right;
     }
+}
 </style>
-<div class="bottom-nav">
-    <div class="about">
-        <p style="font-size: 30px;color: black;font-family: monospace;">About</p>
-        <p style="width: 60%;margin-left: 20%;margin-top: 50px;">This Website's purpose is just only to help people at home in these LockDown Days...</p>
-        <a><i class="fab fa-twitter-square" style="font-size: 40px;color: #262626;"></i></a>
-        <a><i class="fab fa-facebook-square" style="font-size: 40px;color: #262626;margin-left: 5px;"></i></a>
-        <a><i class="fab fa-instagram-square" style="font-size: 40px;color: #262626;margin-left: 5px;"></i></a>
-        <p>Pracha Songkhro Road, Din Daeng 10400, Bangkok Thailand</p>
+<div class="info_container">
+<div class="information">
+    <h1 class="info_title">Monaptor</h1>
+    <p class="info-text">
+      Monaptor.com  Is A Online Earning From Home Source. You Can Earn By Completing Tasks Given Above. 
+    </p>
+    <div class="social_profile">
+        <a href="" class="social_link"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="" class="social_link"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="" class="social_link"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
-    <div class="contact">
-        <p style="font-size: 30px;color: black;font-family: monospace;">Contact</p>
-        <p>Example@yahoo.com</p>
-        <p>Example@gmail.com</p>
-        <p>Example@hotmail.com</p>
-        <p>Example@example.com</p>
-    </div>
-
+</div>
+<div class="emails">
+    <h1 class="contact_title">Contacts</h1>
+    <p class="email_contacts">Business_monaptor@yahoo.com</p>    
+    <p class="email_contacts">Service_monaptor@yahoo.com</p>
+    <p class="email_contacts">Help_monaptor@yahoo.com</p>
+</div>
+<div class="message_sender">
     <div class="message">
-        <p style="font-size: 30px;color: black;font-family: monospace;">Message</p>
-        <input type="text" name="name" style="width: 49%;height: 30px;font-size: 15px;margin-left: 0;border: none;border-bottom: 1px solid black;background: whitesmoke;" value=" Jack {{-- <?php /*echo $row['name'];*/ ?> --}}">
-        <input type="email" name="email" style="width: 49%;height: 30px;font-size: 15px;border: none;border-bottom: 1px solid black;background: whitesmoke;" value=" someemail@gmail.com {{-- <?php echo /*$row['username'];*/ ?>" --}}">
-        <textarea maxlength="300" id="message" style="height: 70px;width: 100%;resize: none;font-size: 15px;margin-left: 0;border: none;border-bottom: 1px solid black;background: whitesmoke;margin-top: 10px;" onkeyup="count_up(this)"></textarea>
-        <span style="float: right;display: flex;color: grey;font-size: 12px;text-decoration: none;"><p id="cha_num" style="margin-top: -0.1px;"></p>/300</span>
+        <p class="message-title">Message</p>
+        <input type="text" name="name" class="name_input name_email"  placeholder="Name">
+        <input type="email" name="email" class="email_input name_email" placeholder="Email">
+        <textarea maxlength="300" id="message" class="message_input" onkeyup="count_up(this)" placeholder="Message"></textarea><br>
+        <span style="float: right;display: flex;color: grey;font-size: 12px;text-decoration: none;color: #0abde3;" class="character_count"><p id="cha_num" style="margin-top: -0.1px;"></p>/300</span>
         <input type="submit" value="Submit" name="submit" class="submit-btn">
     </div>
 </div>
+</div>
 <script>
     function count_up(bio_cha) {
-        document.getElementById('cha_num').innerHTML = bio_cha.value.length;
-    }
+       document.getElementById('cha_num').innerHTML = bio_cha.value.length;
+   }
 </script>

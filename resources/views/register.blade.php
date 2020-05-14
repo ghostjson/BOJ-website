@@ -23,7 +23,6 @@
 		width: 1366px;
 		background: #0f0f0f;
 		margin: auto;
-		margin-top: 100px;
 	}
 	.reg-form{
 		width: 30%;
@@ -130,17 +129,27 @@
     </div>
     <div class="container">
         <h1 class="warm_welcome">Welcome</h1>
-	    <form class="reg-form" method="post" autocomplete="off">
-		<p>Sign Up</p>
-		@csrf
-		<input type="text" name="username" placeholder="Userame" class="input">
-		<input type="email" name="email" placeholder="Email" class="input">
-		<input type="password" name="password" placeholder="password" class="input">
-		<input type="password" name="confirm_password" placeholder="Confirm Password" class="input">
-		<input type="password" name="secret" placeholder="Secret Code" class="input">
-		<input type="submit" value="Sign Up" name="register" class="sign-up">
-		<a href="/login">Login? Instead</a><a style="cursor: pointer;text-decoration: none;float: right;margin-right: 10%;margin-top: -20px;">Policy and Terms</a>
-	  </form>
+		
+		@if(isset($error))
+			<p style="margin-top: 200px;">{{$error}}</p>
+		@endif
+
+		@if(isset($not))
+			<h2 style="margin-top: 200px;">{{$not}}</h2>
+			<h3><a href="/login">Go back to login page</a></h3>
+		@else
+			<form class="reg-form" method="post" autocomplete="off">
+				<p>Sign Up</p>
+				@csrf
+				<input type="text" name="username" placeholder="Userame" class="input">
+				<input type="email" name="email" placeholder="Email" class="input">
+				<input type="password" name="password" placeholder="password" class="input">
+				<input type="password" name="confirm_password" placeholder="Confirm Password" class="input">
+				<input type="password" name="secret" placeholder="Secret Code" class="input">
+				<input type="submit" value="Sign Up" name="register" class="sign-up">
+				<a href="/login">Login? Instead</a><a style="cursor: pointer;text-decoration: none;float: right;margin-right: 10%;margin-top: -20px;">Policy and Terms</a>
+			</form>
+		@endif
     </div>
     <div class="footer_nav">
         @include('layout.footer')

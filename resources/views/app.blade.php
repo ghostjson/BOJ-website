@@ -124,14 +124,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.6.5/videojs.ads.css">
 <body>
 <div class="navbar">@include('layout.navbar')</div>
-<h3 id="mes-toma" style="display: none">Come Back Tomarrow</h3>
+<h3 id="mes-toma" style="display: none;padding-top:100px;">Come Back Tomarrow</h3>
 
 <section class="website-link-section" id="link-section">
 
     <h3 class="info">Visit these links to get reward</h3>
     <div class="links">
         <small>You should download the app to get reward</small>
-        <a href="#" id="site">{{ $path }}</a>
+
+        @foreach($app as $a)
+            <a href="#" class="url" id="{{$a->id}}" data-path="{{ $a->url }}">{{ $a->url }}</a>
+        @endforeach
     </div>
 </section>
 <div class="banner">
@@ -139,14 +142,18 @@
 </div>
 <script>
 
-    if('{{$path}}' === ''){
+    const site_timeout_limit = 5; //set how many seconds a user restrict for download
+
+
+    if($('.url').text() === ''){
         document.getElementById('link-section').style.display = 'none'
-        document.getElementById('mes-toma').style.display = ''
+        document.getElementById('mes-toma').style.display = 'block'
     }
 
     let time = 0;
     let inter;
     let siteActive = false;
+    let current_id;
 
 
     window.onblur = ()=>{
@@ -166,23 +173,28 @@
         clearInterval(inter);
 
         if(siteActive){
-            if(time > 60){
+            if(time > site_timeout_limit){
                 time = 0;
                 siteActive = false
-                fetch('/app/complete/{{$id}}', {
+                fetch(`/app/complete/${current_id}`, {
                     method: 'GET'
                 }).then(function(){
                     location.reload()
                 })
+            }else{
+                siteActive = false;
+                time = 0;
+                alert('You should spend atleast 2 mins in the app')
             }
         }
     }
 
 
-    $('#site').click(function() {
+    $('.url').click(function() {
         siteActive = true;
+        window.open($(this).attr('data-path'), '_blank');
 
-        window.open('{{$path}}', '_blank');
+        current_id = $(this).attr('id');
     });
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Video;
 use App\Url;
 use App\Withdrawal;
+use App\App;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -135,14 +136,25 @@ class MainController extends Controller
         return response()->json(['success'=>'success'], 200);
     }
 
+    
+    public function appComplete($id){
+        $app = App::find($id);
+        $user = auth()->user();
+        $user->app_track = $id;
+        $user->wallet += $app->reward;
+        $user->save();
+
+        return response()->json(['success'=>'success'], 200);
+    }
+
     public function app(){
         $track = auth()->user()->app_track;
         $adv = DB::table('ads')->where('type','banner')->first();
 
-        if($app = DB::table('apps')->where('id', '>', $track)->first()){
-            return view('app', ['path'=>$app->url, 'id'=>$app->id, 'ad_path'=>$adv->path]);
+        if($app = DB::table('apps')->where('id', '>', $track)->get()){
+            return view('app', ['app'=>$app, 'ad_path'=>$adv->path]);
         }else{
-            return view('app', ['path'=>'', 'id'=>'','ad_path'=>$adv->path]);
+            return view('app', ['path'=>'', 'ad_path'=>$adv->path]);
         }
     }
 }

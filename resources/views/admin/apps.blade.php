@@ -39,7 +39,7 @@
 
                 <tr>
                     <td>{{ $i }}</td>
-                    <td>{{ $u->urls }}</td>
+                    <td>{{ $u->url }}</td>
                     <td>{{ $u->reward }}</td>
                     <td> <a href="/admin/app/edit/{{ $u->id }}">edit</a> / <a href="/admin/app/delete/{{ $u->id }}">delete</a></td>
                 </tr>

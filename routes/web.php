@@ -31,7 +31,7 @@ Route::post('/withdraw/submit', 'MainController@withdrawSubmit');
 
 Route::get('/videos/complete/{id}', 'MainController@videoComplete');
 Route::get('/website/complete/{id}', 'MainController@webComplete');
-
+Route::get('/app/complete/{id}', 'MainController@appComplete');
 
 
 
